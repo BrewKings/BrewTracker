@@ -1,0 +1,13 @@
+Batch:
+	R: Store details of a specific Batch
+	C: BatchDatabase
+
+BatchDatabase:
+	R: Store all created batches
+	C:
+
+TastingNotes:
+	R: Store Batch tasting notes
+	C: Batch
+
+

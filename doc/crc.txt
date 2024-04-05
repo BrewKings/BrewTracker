@@ -12,5 +12,14 @@ TastingNotes:
 
 BrewingNotes:
 	R: Store Batch brewing notes
-	C: Batch
+	C: Batch, Ingredients
+
+Ingredients:
+	R: Store ingredients of a batch
+	C: Ingredient
+
+Ingredient: 
+	R: Stores name, type, quantity, and time of addition of an ingredient
+	C:
+
 

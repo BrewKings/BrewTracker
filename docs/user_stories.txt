@@ -9,3 +9,4 @@ US 01.07.01: As a user, I want to add tasting notes to a brew at different times
 US 01.08.01: As a user, I want to optionally track temperature, humidity, and/or pressure data in my brewing room 
 US 01.09.01: As a user, I want to sort my batches
 US 01.09.02: As a user, I want to rate my batches and filter/sort batches by rating
+US 01.10.01: As a user, I want to create future batch ideas and save them in the app

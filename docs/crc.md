@@ -1,32 +1,32 @@
-Batch:
+## Batch:
 	R: Store details of a specific Batch
 	C: BatchDatabase
 
-BatchDatabase:
+## BatchDatabase:
 	R: Store all created batches
 	C:
 
-TastingNotes:
+## TastingNotes:
 	R: Store Batch tasting notes
 	C: Batch
 
-BrewingNotes:
+## BrewingNotes:
 	R: Store Batch brewing notes
 	C: Batch, Ingredients, Step
 
-Ingredients:
+## Ingredients:
 	R: Store ingredients of a batch
 	C: Ingredient
 
-Ingredient: 
+## Ingredient: 
 	R: Stores name, type, quantity, and time of addition of an ingredient
 	C: TimeStamp
 
-TimeStamp:
+## TimeStamp:
 	R: DateTime object to be attached to another object to date it. 
 	R: Stores date and time of creation
 	C: 
 
-Step:
+## Step:
 	R: Store information of one step in batch creation
 	C: BrewingNotes

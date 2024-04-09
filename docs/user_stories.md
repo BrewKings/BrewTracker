@@ -1,4 +1,4 @@
-USER:
+# USER:
 US 01.01.01: As a user, I want to create a new batch and add it to my list of batches
 US 01.02.01: As a user, I want to be able to add produciton notes to an existing batch
 US 01.03.01: As a user, I want to easily be able to reference previous batches by entering the batch number or scanning a QR code

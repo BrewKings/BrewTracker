@@ -22,3 +22,8 @@ class Data:
             print(message["error"])
         else:
             print(loader.read())
+
+
+if __name__ == '__main__':
+    d = Data({"temp": 12, "hum": 69})
+    d.logData('https://console.firebase.google.com/u/0/project/syntax-terror-f783b/messaging/onboarding')

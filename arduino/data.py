@@ -10,15 +10,16 @@ class Data:
         Instantiates a new Data object
         '''
         self.data = data 
+        self.my_data = dict()
         self.my_data["timestamp"] = {".sv" : "timestamp"}
         
-        self.json_data = json.dumps(self.data).encode()
+        self.json_data = json.dump(self.data).encode()
 
-    def logData(url):
+    def logData(self,url):
         try:
             loader = urllib.request.urlopen(url, data=self.json_data)
         except urllib.error.URLError as e:
-            message = json.loads(e.read())
+            message = json.load(e.read())
             print(message["error"])
         else:
             print(loader.read())
@@ -26,4 +27,4 @@ class Data:
 
 if __name__ == '__main__':
     d = Data({"temp": 12, "hum": 69})
-    d.logData('https://console.firebase.google.com/u/0/project/syntax-terror-f783b/messaging/onboarding')
+    d.logData('https://console.firebase.google.com/u/0/project/brewtracker-1fd25/messaging/onboarding')

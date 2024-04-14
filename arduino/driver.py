@@ -16,9 +16,7 @@ except IndexError as e:
     f = open("default.json", "r")
     URL = json.load(f)["url"]["default"]
 
-
 def db_setup():
-    
     fb = firebase.FirebaseApplication("https://console.firebase.google.com/project/brewtracker-1fd25/firestore/databases/-default-", None)
     result = fb.get("/data", None)
     print(result)
@@ -57,7 +55,7 @@ def main():
     d = Data({"temp":12,"hum":44})
     q.put(d)
     print(str(q))
-    # setup()
+    #setup()
     print(URL)
 
 if __name__ == "__main__":

@@ -3,11 +3,12 @@ import json
 
 f = open("local.json")
 credentials = json.load(f)["cred"]
+local = credentials["localhost"]
 user = credentials["username"]
 passwd = credentials["password"]
 print(user + passwd)
 mydb = mysql.connector.connect(
-        host="localhost",
+        host=local,
         user=user,
         password=passwd
         )

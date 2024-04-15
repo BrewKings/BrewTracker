@@ -10,6 +10,9 @@ TIME_HOUR = 3
 TIME_MINUTE = 4 
 TIME_SEC = 5
 TIME_YDAY = 7
+
+th_data = list()
+
 try:
     URL = sys.argv[1]
 except IndexError as e:
@@ -29,14 +32,31 @@ def port_setup():
 def read_port(port):
     if port.in_waiting > 0:
         ln = port.readline().decode('utf-8').rstrip()
-        return ln
+        bundle = ln.split("-")
+        temp = float(a[0])
+        humid = float(a[1])
+        return (temp, humid)
+    return None
 
-def loop(q):
+def ave(l):
+    t_ave = 0
+    h_ave = 0
+    for i in range(len(l)):
+        t_ave += l[0]
+        h_ave += l[1]
+    t_ave /= len(l)
+    h_ave /= len(l)
+    return {"temperature":t_ave,"humidity":h_ave}
+
+def loop(q, port):
     while(1):
         lt = time.localtime()
+        d_in = read_port(port)
+        if d_in != None:
+            th_data.append(d_in)
         if lt[TIME_MINUTE] == 0 and lt[TIME_SEC]: 
-            d_in = port.read()
-            d_out = Data(d_in)
+            ave_temp_humid = ave(th_data)
+            d_out = Data(ave_temp_humid)
             q.put(d_out)
             try:
                 q.dequeue().logData(URL)
@@ -45,7 +65,7 @@ def loop(q):
                 print("log failed")
             else:
                 q.dequeue()
-                time.sleep(5)
+                time.sleep(2)
 
 def main():
     q = queue.Queue()

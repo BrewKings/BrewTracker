@@ -34,3 +34,5 @@ google-services.json
 
 # Python Files
 arduino/__pycache__/
+
+local.*

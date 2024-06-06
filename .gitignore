@@ -31,3 +31,9 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+
+# Python Files
+arduino/__pycache__/
+
+local.*
